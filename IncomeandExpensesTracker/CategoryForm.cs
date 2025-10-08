@@ -13,7 +13,6 @@ namespace IncomeandExpensesTracker
 {
     public partial class CategoryForm : UserControl
     {
-        string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30";
         public CategoryForm()
         {
             InitializeComponent();
@@ -30,6 +29,7 @@ namespace IncomeandExpensesTracker
             }
             displayCategoryList();
         }
+        
         public void displayCategoryList()
         {
             categoryData cData = new categoryData();
@@ -47,13 +47,13 @@ namespace IncomeandExpensesTracker
         {
             if (category_txt_box.Text == "" || category_type.SelectedIndex == -1 || category_status.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select item firsst", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select item first", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (MessageBox.Show("Are you want to Upadte ID: " + getID + "?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to Update ID: " + getID + "?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (SqlConnection connect = new SqlConnection(stringConnection))
+                    using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                     {
                         connect.Open();
 
@@ -69,8 +69,7 @@ namespace IncomeandExpensesTracker
                             cmd.ExecuteNonQuery();
                             clearFileds();
 
-                            MessageBox.Show("Update Successfuly", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            MessageBox.Show("Updated Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         connect.Close();
@@ -88,7 +87,7 @@ namespace IncomeandExpensesTracker
             }
             else
             {
-                using(SqlConnection connect = new SqlConnection(stringConnection))
+                using(SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                 {
                     connect.Open();
 
@@ -108,8 +107,7 @@ namespace IncomeandExpensesTracker
                         cmd.ExecuteNonQuery();
                         clearFileds();
 
-                        MessageBox.Show("Added Successfuly", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        MessageBox.Show("Added Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     connect.Close();
@@ -131,8 +129,6 @@ namespace IncomeandExpensesTracker
                 category_txt_box.Text = row.Cells[1].Value.ToString();
                 category_type.SelectedItem = row.Cells[2].Value.ToString();
                 category_status.SelectedItem = row.Cells[3].Value.ToString();
-               
-               
             }
         }
 
@@ -142,6 +138,7 @@ namespace IncomeandExpensesTracker
             category_type.SelectedIndex = -1;
             category_status.SelectedIndex = -1;
         }
+        
         private void category_clearbtn_Click(object sender, EventArgs e)
         {
             clearFileds();
@@ -151,13 +148,13 @@ namespace IncomeandExpensesTracker
         {
             if (category_txt_box.Text == "" || category_type.SelectedIndex == -1 || category_status.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select item firsst", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select item first", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (MessageBox.Show("Are you want to Delete ID: " + getID + "?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to Delete ID: " + getID + "?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (SqlConnection connect = new SqlConnection(stringConnection))
+                    using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                     {
                         connect.Open();
 
@@ -166,13 +163,11 @@ namespace IncomeandExpensesTracker
                         using (SqlCommand cmd = new SqlCommand(deleteData, connect))
                         {
                             cmd.Parameters.AddWithValue("@id", getID);
-                           
 
                             cmd.ExecuteNonQuery();
                             clearFileds();
 
-                            MessageBox.Show("Deleted Successfuly", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            MessageBox.Show("Deleted Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         connect.Close();

@@ -1,34 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\",
+  "WorkspaceRootPath": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\SQLQuery12025.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery12025.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\CreateDatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CreateDatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\ExpensesForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:IncomeandExpensesTracker\\ExpensesForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\ExpensesData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:IncomeandExpensesTracker\\ExpensesData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\categorydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\categorydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\RigsterForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:IncomeandExpensesTracker\\RigsterForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:IncomeandExpensesTracker\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:IncomeandExpensesTracker\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\rigsterform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\rigsterform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\SQLQuery12025.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery12025.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\incomedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\incomedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\expensesdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\expensesdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\incomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\incomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\expensesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\expensesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|c:\\users\\hp\\source\\repos\\income-and-expense-tracker\\incomeandexpensestracker\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC0B1BF-F90A-4F7A-B64E-9D217BAE981F}|IncomeandExpensesTracker\\IncomeandExpensesTracker.csproj|solutionrelative:incomeandexpensestracker\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\CreateDatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CreateDatabase.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,82 +62,160 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\MainForm.cs",
-              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\MainForm.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\MainForm.cs",
-              "RelativeToolTip": "IncomeandExpensesTracker\\MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CreateDatabase.sql ",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\CreateDatabase.sql",
+              "RelativeDocumentMoniker": "CreateDatabase.sql",
+              "ToolTip": "CreateDatabase.sql *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-10-08T08:02:32.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CategoryForm.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\CategoryForm.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\CategoryForm.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\CategoryForm.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\CategoryForm.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAABhwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T15:51:52.102Z",
+              "WhenOpened": "2025-10-08T07:42:28.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "RigsterForm.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\RigsterForm.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\RigsterForm.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\RigsterForm.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\RigsterForm.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:41:57.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\Form1.cs",
               "RelativeDocumentMoniker": "IncomeandExpensesTracker\\Form1.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\Form1.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\Form1.cs",
               "RelativeToolTip": "IncomeandExpensesTracker\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T15:45:59.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExpensesData.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\ExpensesData.cs",
-              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\ExpensesData.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\ExpensesData.cs",
-              "RelativeToolTip": "IncomeandExpensesTracker\\ExpensesData.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAC8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T15:40:23.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExpensesForm.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\ExpensesForm.cs",
-              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\ExpensesForm.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\ExpensesForm.cs",
-              "RelativeToolTip": "IncomeandExpensesTracker\\ExpensesForm.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAC8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T15:40:22.075Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SQLQuery12025.sql ",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\SQLQuery12025.sql",
-              "RelativeDocumentMoniker": "SQLQuery12025.sql",
-              "ToolTip": "SQLQuery12025.sql ",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-09-23T14:42:59.669Z",
+              "WhenOpened": "2025-10-08T07:41:34.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RigsterForm.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\RigsterForm.cs",
-              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\RigsterForm.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\IncomeandExpensesTracker\\IncomeandExpensesTracker\\RigsterForm.cs",
-              "RelativeToolTip": "IncomeandExpensesTracker\\RigsterForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAADMAAAAAAAAAA==",
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\DatabaseHelper.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\DatabaseHelper.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAABRwLcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T14:35:25.04Z",
+              "WhenOpened": "2025-10-08T07:41:03.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\Program.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\Program.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\Program.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:31:45.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DashboardForm.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\DashboardForm.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\DashboardForm.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\DashboardForm.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\DashboardForm.cs",
+              "ViewState": "AgIAAHUBAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:45:24.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ExpensesForm.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\ExpensesForm.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\ExpensesForm.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\ExpensesForm.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\ExpensesForm.cs",
+              "ViewState": "AgIAANMAAAAAAAAAAABhwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:44:39.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IncomeForm.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\IncomeForm.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\IncomeForm.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\IncomeForm.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\IncomeForm.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAMBdwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:44:00.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ExpensesData.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\ExpensesData.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\ExpensesData.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\ExpensesData.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\ExpensesData.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:43:11.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IncomeData.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\IncomeData.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\IncomeData.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\IncomeData.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\IncomeData.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:42:59.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "categoryData.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\categoryData.cs",
+              "RelativeDocumentMoniker": "IncomeandExpensesTracker\\categoryData.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\Income-And-Expense-Tracker\\IncomeandExpensesTracker\\categoryData.cs",
+              "RelativeToolTip": "IncomeandExpensesTracker\\categoryData.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:30:53.496Z",
               "EditorCaption": ""
             }
           ]

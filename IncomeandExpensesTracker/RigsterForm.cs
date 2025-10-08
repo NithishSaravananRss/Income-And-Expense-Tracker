@@ -13,15 +13,9 @@ namespace IncomeandExpensesTracker
 {
     public partial class RigsterForm : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30");
         public RigsterForm()
         {
             InitializeComponent();
-        }
-
-        public bool checkConnection()
-        {
-            return (connect.State == ConnectionState.Closed) ? true : false;
         }
 
         private void login_btn_Click(object sender, EventArgs e)
@@ -29,15 +23,15 @@ namespace IncomeandExpensesTracker
             if (signup_usertextbox.Text == "" || signup_pwdtextbox.Text == "" || signup_conpwd_textbox.Text == "")
             {
                 MessageBox.Show("Please fill all blank fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {
-                if (checkConnection())
+                using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                 {
                     try
                     {
                         connect.Open();
+                        
                         // check if the username you want to register is already exist
                         string selectUsername = "SELECT * FROM users WHERE username = @usern";
                         using (SqlCommand checkUser = new SqlCommand(selectUsername, connect))
@@ -47,14 +41,15 @@ namespace IncomeandExpensesTracker
                             SqlDataAdapter adapter = new SqlDataAdapter(checkUser);
                             DataTable table = new DataTable();
                             adapter.Fill(table);
+                            
                             if (table.Rows.Count > 0)
                             {
                                 string tempUsern = signup_usertextbox.Text.Substring(0, 1).ToUpper() + signup_usertextbox.Text.Substring(1);
-                                MessageBox.Show(tempUsern + "is exsting already", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(tempUsern + " is existing already", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else if (signup_pwdtextbox.Text.Length < 4)
                             {
-                                MessageBox.Show("Invalid password , at least 4 Characters are needed", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Invalid password, at least 4 characters are needed", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else if (signup_pwdtextbox.Text != signup_conpwd_textbox.Text)
                             {
@@ -68,32 +63,23 @@ namespace IncomeandExpensesTracker
                                 {
                                     insertuser.Parameters.AddWithValue("@usern", signup_usertextbox.Text.Trim());
                                     insertuser.Parameters.AddWithValue("@pass", signup_pwdtextbox.Text.Trim());
-
-
-                                    DateTime today = DateTime.Today; // to getnow date
-                                    insertuser.Parameters.AddWithValue("@date", today);
+                                    insertuser.Parameters.AddWithValue("@date", DateTime.Today);
 
                                     insertuser.ExecuteNonQuery();
 
-                                    MessageBox.Show("Registered Successfully !!...", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Registered Successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     Form1 loginForm = new Form1();
                                     loginForm.Show();
 
                                     this.Hide();
-
-
                                 }
                             }
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Failed connection : ex" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connect.Close();
+                        MessageBox.Show($"Failed connection: {ex.Message}", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -103,7 +89,6 @@ namespace IncomeandExpensesTracker
         {
             signup_pwdtextbox.PasswordChar = signup_showcheckbox.Checked ? '\0' : '*';
             signup_conpwd_textbox.PasswordChar = signup_showcheckbox.Checked ? '\0' : '*';
-
         }
 
         private void login_pwdtextbox_TextChanged(object sender, EventArgs e)

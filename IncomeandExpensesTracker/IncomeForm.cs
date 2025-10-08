@@ -11,12 +11,8 @@ using System.Data.SqlClient;
 
 namespace IncomeandExpensesTracker
 {
-
     public partial class IncomeForm : UserControl
     {
-
-        string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30";
-
         public IncomeForm()
         {
             InitializeComponent();
@@ -34,7 +30,6 @@ namespace IncomeandExpensesTracker
             }
             displayCategoryList();
             displayIncomeData();
-
         }
 
         public void displayIncomeData()
@@ -52,7 +47,7 @@ namespace IncomeandExpensesTracker
 
         public void displayCategoryList()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
 
@@ -79,11 +74,11 @@ namespace IncomeandExpensesTracker
             if (Income_category_combox.SelectedIndex == -1 || income_item_textbox.Text == ""
                 || income_income_textbox.Text == "" || income_desc_textbox.Text == "")
             {
-                MessageBox.Show("Please fill all blanks fields ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill all blanks fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                using (SqlConnection connect = new SqlConnection(stringConnection))
+                using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                 {
                     connect.Open();
 
@@ -104,16 +99,14 @@ namespace IncomeandExpensesTracker
                         cmd.ExecuteNonQuery();
                         clearFields();
 
-                        MessageBox.Show("Added Successfully ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Added Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
 
                     connect.Close();
                 }
             }
             displayIncomeData();
         }
-
 
         public void clearFields()
         {
@@ -122,6 +115,7 @@ namespace IncomeandExpensesTracker
             income_income_textbox.Text = "";
             income_desc_textbox.Text = "";
         }
+        
         private void income_clearbtn_Click(object sender, EventArgs e)
         {
             clearFields();
@@ -129,22 +123,21 @@ namespace IncomeandExpensesTracker
 
         private void income_updatebtn_Click(object sender, EventArgs e)
         {
-
             if (Income_category_combox.SelectedIndex == -1 || income_item_textbox.Text == ""
                 || income_income_textbox.Text == "" || income_desc_textbox.Text == "")
             {
-                MessageBox.Show("Please select category first ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select category first", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if(MessageBox.Show("Are you sure you want Update ID:"+getID+"?","confirmation  Message"
+                if(MessageBox.Show("Are you sure you want to Update ID: "+getID+"?","Confirmation Message"
                     ,MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
-                    using (SqlConnection connect = new SqlConnection(stringConnection))
+                    using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                     {
                         connect.Open();
 
-                        string updateData = "UPDATE  income SET category=@cat,item=@item,income=@income,description=@desc,date_income=@date_in WHERE id=@id";
+                        string updateData = "UPDATE income SET category=@cat,item=@item,income=@income,description=@desc,date_income=@date_in WHERE id=@id";
 
                         using (SqlCommand cmd = new SqlCommand(updateData, connect))
                         {
@@ -155,13 +148,11 @@ namespace IncomeandExpensesTracker
                             cmd.Parameters.AddWithValue("@date_in", income_date_box.Value);
                             cmd.Parameters.AddWithValue("@id", getID);
 
-
                             cmd.ExecuteNonQuery();
                             clearFields();
 
-                            MessageBox.Show("Updated Successfully ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Updated Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
 
                         connect.Close();
                     }
@@ -192,14 +183,14 @@ namespace IncomeandExpensesTracker
             if (Income_category_combox.SelectedIndex == -1 || income_item_textbox.Text == ""
                || income_income_textbox.Text == "" || income_desc_textbox.Text == "")
             {
-                MessageBox.Show("Please select category first ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select category first", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (MessageBox.Show("Are you sure you want Delete ID:" + getID + "?", "confirmation  Message"
+                if (MessageBox.Show("Are you sure you want to Delete ID: " + getID + "?", "Confirmation Message"
                    , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (SqlConnection connect = new SqlConnection(stringConnection))
+                    using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                     {
                         connect.Open();
 
@@ -209,13 +200,11 @@ namespace IncomeandExpensesTracker
                         {
                             cmd.Parameters.AddWithValue("@id", getID);
 
-
                             cmd.ExecuteNonQuery();
                             clearFields();
 
-                            MessageBox.Show("Deleted Successfully ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Deleted Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
 
                         connect.Close();
                     }

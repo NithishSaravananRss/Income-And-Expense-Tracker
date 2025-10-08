@@ -13,7 +13,6 @@ namespace IncomeandExpensesTracker
 {
     public partial class Form1 : Form
     {
-        string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30";
         public Form1()
         {
             InitializeComponent();
@@ -47,38 +46,44 @@ namespace IncomeandExpensesTracker
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
-                connect.Open();
-
-                string selectData = "SELECT * FROM users WHERE username = @usern AND password = @pass";
-
-                using (SqlCommand cmd = new SqlCommand(selectData, connect))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@usern", login_usertextbox.Text.Trim());
-                    cmd.Parameters.AddWithValue("@pass", login_pwdtextbox.Text.Trim());
+                    connect.Open();
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable table = new DataTable();
+                    string selectData = "SELECT * FROM users WHERE username = @usern AND password = @pass";
 
-                    adapter.Fill(table);
-
-                    if (table.Rows.Count > 0)
+                    using (SqlCommand cmd = new SqlCommand(selectData, connect))
                     {
-                        username = login_usertextbox.Text;
+                        cmd.Parameters.AddWithValue("@usern", login_usertextbox.Text.Trim());
+                        cmd.Parameters.AddWithValue("@pass", login_pwdtextbox.Text.Trim());
 
-                        MessageBox.Show("Login Successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable table = new DataTable();
 
-                        MainForm mForm = new MainForm();
-                        mForm.Show();
+                        adapter.Fill(table);
 
+                        if (table.Rows.Count > 0)
+                        {
+                            username = login_usertextbox.Text;
 
-                        this.Hide();
+                            MessageBox.Show("Login Successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            MainForm mForm = new MainForm();
+                            mForm.Show();
+
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect username / password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Incorrect username / password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Login error: {ex.Message}", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

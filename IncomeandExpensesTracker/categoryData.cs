@@ -10,10 +10,6 @@ namespace IncomeandExpensesTracker
 {
     class categoryData
     {
-
-        string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30";
-
-
         public int ID { set; get; }//0
 
         public string Category { set; get; }//1
@@ -28,7 +24,7 @@ namespace IncomeandExpensesTracker
         {
             List<categoryData> listData = new List<categoryData>();
 
-            using(SqlConnection connect = new SqlConnection(stringConnection))
+            using(SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
 
@@ -49,12 +45,10 @@ namespace IncomeandExpensesTracker
                         cData.Date = ((DateTime)reader["date_insert"]).ToString("dd-MM-yyyy");
 
                         listData.Add(cData);
-
                     }
                 }
             }
             return listData;
         }
-    
-   }
+    }
 }

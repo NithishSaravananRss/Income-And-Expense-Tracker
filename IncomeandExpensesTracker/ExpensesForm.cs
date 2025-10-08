@@ -13,16 +13,14 @@ namespace IncomeandExpensesTracker
 {
     public partial class ExpensesForm : UserControl
     {
-        string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30";
-
         public ExpensesForm()
         {
             InitializeComponent();
 
             displayCategoryList();
             displayExpensesData();
-
         }
+        
         public void refreshData()
         {
             if (InvokeRequired)
@@ -32,7 +30,6 @@ namespace IncomeandExpensesTracker
             }
             displayCategoryList();
             displayExpensesData();
-
         }
 
         public void displayExpensesData()
@@ -45,7 +42,7 @@ namespace IncomeandExpensesTracker
 
         public void displayCategoryList()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
 
@@ -72,12 +69,11 @@ namespace IncomeandExpensesTracker
             if (expenses_category_combox.SelectedIndex == -1 || expenses_item_textbox.Text == ""
                || expenses_cost_textbox.Text == "" || expenses_desc_textbox.Text == "")
             {
-                MessageBox.Show("Please fill all blanks fields ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill all blanks fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-
-                using (SqlConnection connect = new SqlConnection(stringConnection))
+                using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                 {
                     connect.Open();
 
@@ -98,16 +94,15 @@ namespace IncomeandExpensesTracker
                         cmd.ExecuteNonQuery();
                         clearFields();
 
-                        MessageBox.Show("Added Successfully ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Added Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
 
                     connect.Close();
                 }
             }
             displayExpensesData();
-
         }
+        
         public void clearFields()
         {
             expenses_item_textbox.Text = "";
@@ -130,17 +125,14 @@ namespace IncomeandExpensesTracker
             }
             else
             {
-
-                if (MessageBox.Show("Are you sure you want Update ID:" + getID + "?", "confirmation  Message"
+                if (MessageBox.Show("Are you sure you want to Update ID: " + getID + "?", "Confirmation Message"
                         , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
-                    using (SqlConnection connect = new SqlConnection(stringConnection))
+                    using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                     {
                         connect.Open();
 
-                        string updateData = "UPDATE  expense SET category= @cat , item =@item" +
-                            ",income=@income,description=@desc,date_income=@date_in WHERE id=@id";
+                        string updateData = "UPDATE expenses SET category=@cat,item=@item,cost=@cost,description=@desc,date_expense=@date_ex WHERE id=@id";
 
                         using (SqlCommand cmd = new SqlCommand(updateData, connect))
                         {
@@ -151,28 +143,25 @@ namespace IncomeandExpensesTracker
                             cmd.Parameters.AddWithValue("@date_ex", expenses_date_box.Value);
                             cmd.Parameters.AddWithValue("@id", getID);
 
-
                             cmd.ExecuteNonQuery();
                             clearFields();
 
-                            MessageBox.Show("Updated Successfully ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Updated Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
 
                         connect.Close();
                     }
                 }
             }
-                 displayExpensesData();
+            displayExpensesData();
         }
-       
 
         private void expenses_deletebtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want Deleted ID:" + getID + "?", "confirmation  Message"
+            if (MessageBox.Show("Are you sure you want to Delete ID: " + getID + "?", "Confirmation Message"
                    , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                using (SqlConnection connect = new SqlConnection(stringConnection))
+                using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
                 {
                     connect.Open();
 
@@ -180,16 +169,13 @@ namespace IncomeandExpensesTracker
 
                     using (SqlCommand cmd = new SqlCommand(deleteData, connect))
                     {
-                       
                         cmd.Parameters.AddWithValue("@id", getID);
-
 
                         cmd.ExecuteNonQuery();
                         clearFields();
 
-                        MessageBox.Show("Deleted Successfully ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Deleted Successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
 
                     connect.Close();
                 }
@@ -197,8 +183,8 @@ namespace IncomeandExpensesTracker
             displayExpensesData();
         }
 
-
         private int getID = 0;
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -211,7 +197,6 @@ namespace IncomeandExpensesTracker
                 expenses_cost_textbox.Text = row.Cells[3].Value.ToString();
                 expenses_desc_textbox.Text = row.Cells[4].Value.ToString();
                 expenses_date_box.Value = Convert.ToDateTime(row.Cells[5].Value);
-
             }
         }
 
@@ -227,7 +212,6 @@ namespace IncomeandExpensesTracker
                 expenses_cost_textbox.Text = row.Cells[3].Value.ToString();
                 expenses_desc_textbox.Text = row.Cells[4].Value.ToString();
                 expenses_date_box.Value = Convert.ToDateTime(row.Cells[5].Value);
-
             }
         }
     }

@@ -8,36 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
- namespace IncomeandExpensesTracker
+
+namespace IncomeandExpensesTracker
 {
     public partial class DashboardForm : UserControl
     {
-        string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30";
         public DashboardForm()
         {
             InitializeComponent();
            
             incomeTodayIncome();
-
             incomeYesterdayIncome();
-
             incomeThisMonth();
-
-             incomeThisYear();
-
+            incomeThisYear();
             incomeTotalIncome();
-
             expensesTodayExpenses();
-
             expensesYesterdayExpenses();
-
             expenseThisMonth();
-
             expenseThisYear();
-
             expenseTotalYear();
-
-
         }
 
         public void refreshData()
@@ -48,23 +37,14 @@ using System.Data.SqlClient;
                 return;
             }
             incomeTodayIncome();
-
             incomeYesterdayIncome();
-
             incomeThisMonth();
-
             incomeThisYear();
-
             incomeTotalIncome();
-
             expensesTodayExpenses();
-
             expensesYesterdayExpenses();
-
             expenseThisMonth();
-
             expenseThisYear();
-
             expenseTotalYear();
         }
 
@@ -107,11 +87,11 @@ using System.Data.SqlClient;
         {
 
         }
+        
         //Income
-
         public void incomeTodayIncome()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
 
@@ -127,20 +107,19 @@ using System.Data.SqlClient;
                     if (result != DBNull.Value)
                     {
                         decimal todayCost = Convert.ToDecimal(result);
-
-                        income_todaysincome.Text =  todayCost.ToString("C");
-
+                        income_todaysincome.Text = todayCost.ToString("C");
                     }
                     else
                     {
-                        income_todaysincome.Text = "0.00" ;
+                        income_todaysincome.Text = "0.00";
                     }
                 }
             }
-            }
+        }
+        
         public void incomeYesterdayIncome()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
 
@@ -148,16 +127,12 @@ using System.Data.SqlClient;
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
-                   
-
                     object result = cmd.ExecuteScalar();
 
                     if (result != DBNull.Value)
                     {
                         decimal yesterdayCost = Convert.ToDecimal(result);
-
-                        income_yesterdaysincome.Text =  yesterdayCost.ToString("C");
-
+                        income_yesterdaysincome.Text = yesterdayCost.ToString("C");
                     }
                     else
                     {
@@ -169,13 +144,12 @@ using System.Data.SqlClient;
 
         public void incomeThisMonth()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
                 DateTime today = DateTime.Now.Date;
                 DateTime startMonth = new DateTime(today.Year, today.Month, 1);
                 DateTime endMonth = startMonth.AddMonths(1).AddDays(-1);
-
 
                 string query = "SELECT SUM(income) FROM income WHERE date_income >=@startMonth AND date_income <= @endMonth";
 
@@ -189,9 +163,7 @@ using System.Data.SqlClient;
                     if (result != DBNull.Value)
                     {
                         decimal monthCost = Convert.ToDecimal(result);
-
                         income_thismonthincome.Text = monthCost.ToString("C");
-
                     }
                     else
                     {
@@ -203,13 +175,12 @@ using System.Data.SqlClient;
 
         public void incomeThisYear()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
                 DateTime today = DateTime.Now.Date;
                 DateTime startyear = new DateTime(today.Year, 1, 1);
                 DateTime endyear = startyear.AddYears(1).AddDays(-1);
-
 
                 string query = "SELECT SUM(income) FROM income WHERE date_income >=@startyear AND date_income <= @endyear";
 
@@ -223,9 +194,7 @@ using System.Data.SqlClient;
                     if (result != DBNull.Value)
                     {
                         decimal yearCost = Convert.ToDecimal(result);
-
                         income_thisyearincome.Text = yearCost.ToString("C");
-
                     }
                     else
                     {
@@ -237,26 +206,20 @@ using System.Data.SqlClient;
 
         public void incomeTotalIncome()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
-               
-
 
                 string query = "SELECT SUM(income) FROM income";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
-                    
-
                     object result = cmd.ExecuteScalar();
 
                     if (result != DBNull.Value)
                     {
                         decimal totalCost = Convert.ToDecimal(result);
-
                         income_totalincome.Text = totalCost.ToString("C");
-
                     }
                     else
                     {
@@ -266,15 +229,14 @@ using System.Data.SqlClient;
             }
         }
 
-
         // expenses
         public void expensesTodayExpenses()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
 
-                string query = "SELECT SUM(cost)FROM expenses WHERE date_expense = @date_ex";
+                string query = "SELECT SUM(cost) FROM expenses WHERE date_expense = @date_ex";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
@@ -286,9 +248,7 @@ using System.Data.SqlClient;
                     if (result != DBNull.Value)
                     {
                         decimal todayCost = Convert.ToDecimal(result);
-
                         expenses_todayexpenses.Text = todayCost.ToString("C");
-
                     }
                     else
                     {
@@ -297,9 +257,10 @@ using System.Data.SqlClient;
                 }
             }
         }
+        
         public void expensesYesterdayExpenses()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
 
@@ -307,16 +268,12 @@ using System.Data.SqlClient;
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
-
-
                     object result = cmd.ExecuteScalar();
 
                     if (result != DBNull.Value)
                     {
                         decimal yesterdayCost = Convert.ToDecimal(result);
-
                         expenses_yesterdaysexpenses.Text = yesterdayCost.ToString("C");
-
                     }
                     else
                     {
@@ -328,13 +285,12 @@ using System.Data.SqlClient;
 
         public void expenseThisMonth()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
                 DateTime today = DateTime.Now.Date;
                 DateTime startMonth = new DateTime(today.Year, today.Month, 1);
                 DateTime endMonth = startMonth.AddMonths(1).AddDays(-1);
-
 
                 string query = "SELECT SUM(cost) FROM expenses WHERE date_expense >=@startMonth AND date_expense <= @endMonth";
 
@@ -348,9 +304,7 @@ using System.Data.SqlClient;
                     if (result != DBNull.Value)
                     {
                         decimal monthCost = Convert.ToDecimal(result);
-
                         expenses_thismonthexpenses.Text = monthCost.ToString("C");
-
                     }
                     else
                     {
@@ -362,13 +316,12 @@ using System.Data.SqlClient;
 
         public void expenseThisYear()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
                 DateTime today = DateTime.Now.Date;
                 DateTime startyear = new DateTime(today.Year, 1, 1);
                 DateTime endyear = startyear.AddYears(1).AddDays(-1);
-
 
                 string query = "SELECT SUM(cost) FROM expenses WHERE date_expense >=@startyear AND date_expense <= @endyear";
 
@@ -382,9 +335,7 @@ using System.Data.SqlClient;
                     if (result != DBNull.Value)
                     {
                         decimal yearCost = Convert.ToDecimal(result);
-
                         expenses_thisyearexpenses.Text = yearCost.ToString("C");
-
                     }
                     else
                     {
@@ -396,26 +347,20 @@ using System.Data.SqlClient;
 
         public void expenseTotalYear()
         {
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
-               
 
-
-                string query = "SELECT SUM(cost) FROM expenses ";
+                string query = "SELECT SUM(cost) FROM expenses";
 
                 using (SqlCommand cmd = new SqlCommand(query, connect))
                 {
-                    
-
                     object result = cmd.ExecuteScalar();
 
                     if (result != DBNull.Value)
                     {
                         decimal yearCost = Convert.ToDecimal(result);
-
                         expenses_totalexpense.Text = yearCost.ToString("C");
-
                     }
                     else
                     {
@@ -430,6 +375,4 @@ using System.Data.SqlClient;
 
         }
     }
-   
-
 }

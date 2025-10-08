@@ -10,19 +10,18 @@ namespace IncomeandExpensesTracker
 {
     class ExpensesData
     {
-        string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Desktop\IncomeandExpensesTracker\expense.mdf;Integrated Security=True;Connect Timeout=30";
-
         public int ID { set; get; }
         public string Category { set; get; }
         public string Item { set; get; }
         public string Cost { set; get; }
         public string Description { set; get; }
         public string DateExpense { set; get; }
+        
         public List<ExpensesData> expensesListData()
         {
             List<ExpensesData> listdata = new List<ExpensesData>();
 
-            using (SqlConnection connect = new SqlConnection(stringConnection))
+            using (SqlConnection connect = new SqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 connect.Open();
                 string selectData = "SELECT * FROM expenses";
@@ -43,11 +42,9 @@ namespace IncomeandExpensesTracker
 
                         listdata.Add(eData);
                     }
-
                 }
             }
             return listdata;
         }
-
     }
 }
